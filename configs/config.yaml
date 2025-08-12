@@ -1,0 +1,51 @@
+FILE_SETTINGS:
+  OUTPUT_DIR: "output/images"           # 生成图片的保存目录
+  INPUT_FILE: "texts/Company-Shorter-Form1000.txt"  # 输入文本文件路径（这个字段目前没被使用）
+  EXTENSION: "jpg"                      # 输出图片格式，jpg压缩率好但可能损失质量
+  NAME_FORMAT: 2                        # 图片命名格式：2表示8位数字补零，如00000001.jpg
+  FONTS: ch                            # 字体目录，ch表示使用fonts/ch/下的所有字体文件
+
+TEXT_SETTINGS:
+  LANGUAGE: "ch"                        # 语言类型：ch=中文，en=英文
+  CORPUS: "texts/Company-Shorter-Form1000.txt"  # 语料库文件路径
+  CORPUS_TYPE: "CORPUS"                 # 文本生成方式：CORPUS=从文件读取，RANDOM=随机生成，DICT=从字典生成
+  INCLUDE_LETTERS: False                # 是否包含字母（随机模式时使用）
+  INCLUDE_NUMBERS: False                # 是否包含数字（随机模式时使用）
+  INCLUDE_SYMBOLS: False                # 是否包含符号（随机模式时使用）
+  LENGTH: 0                             # 随机模式时字符串长度（0表示不限制）
+  RANDOM: False                         # 是否允许随机长度（随机模式时使用）
+  USE_WIKIPEDIA: False                  # 是否使用维基百科（未实现）
+  STROKE_WIDTH: 0                       # 描边宽度，0表示无描边
+  STROKE_FILL: "(255,255,255)"         # 描边颜色，白色（这个会被下面覆盖）
+  COLOR: "(0,0,0)"                     # 文字颜色，黑色RGB值
+
+  SIZE: 32                              # 字体大小，像素单位
+  MIN_CHAR: 1                           # 最小字符数（未使用）
+  MAX_CHAR: 20                          # 最大字符数（未使用）
+
+  STROKE_WIDTH: 0                       # 描边宽度，重复定义（会覆盖上面的）
+  STROKE_FILL: "(0,0,0)"               # 描边颜色，黑色（会覆盖上面的白色）
+  HEIGHT: 0                             # 最终图片高度，0表示自适应，>0会等比缩放
+
+IMAGE_FORMAT_SETTINGS:
+  FORMAT: 32                            # 图片格式/位深度（未使用）
+  WIDTH: 0                              # 图片宽度，0表示自适应文字宽度，>0固定宽度
+  ALIGNMENT: 1                          # 对齐方式（未使用）
+  ORIENTATION: 0                        # 文字方向：0=水平，1=垂直
+  TEXT_COLOR: "#282828"                 # 文字颜色十六进制（未使用，被TEXT_SETTINGS.COLOR覆盖）
+  SPACE_WIDTH: 1.0                      # 空格宽度倍数，1.0表示正常宽度
+  MARGINS: "5,4,5,4"                   # 边距设置：上,左,下,右（像素）
+  FIT: False                            # 是否裁剪空白边缘，False保留完整画布
+  BBOX: False                           # 是否生成字符边界框（未实现）
+  LABEL_ONLY: False                     # 是否只生成标签不生成图片（未实现）
+
+DISTORTION_SETTINGS:
+  SKEW_ANGLE: 10                        # 最大倾斜角度，±10度
+  RANDOM_SKEW: True                     # 是否随机倾斜
+  DISTORTION: 0                         # 扭曲程度（未实现）
+  DISTORTION_ORIENTATION: 0             # 扭曲方向（未实现）
+
+OTHER_SETTINGS:
+  BACKGROUND: 0                         # 背景类型（未使用）
+  HANDWRITTEN: False                    # 是否模拟手写（未实现）
+  NUM_WORKERS: 8                        # 多进程工作数量，8个进程并行生成
